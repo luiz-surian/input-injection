@@ -1,5 +1,28 @@
 from __init__ import *
 
+def helloWorld():
+    combination(["LWIN", "R"])
+    wait(0.2)
+    press(["C", "M", "D", "RETURN"])
+    wait(0.2)
+    press(["I", "P", "C", "O", "N", "F", "I", "G", "RETURN"])
+
+def primitive():
+    combination(["LWIN", "3"]) # Abrir Outlook
+    wait(0.2)
+    move(x=20, y=78) # Novo Email
+    click()
+    press(["A", "G", "A", "T", "A", "N", "G", "E", "L", "O", "TAB"])
+    wait(0.2)
+    move(x=148, y=270) # Assunto
+    click()
+    press(["P", "A", "R", "A", "SPACE", "C", "O", "N", "H", "E", "C", "I", "M", "E", "N", "T", "O"])
+    wait(0.2)
+    move(x=25,  y=306) # Corpo
+    click()
+    press(["B", "O", "A", "SPACE", "T", "A", "R", "D", "E", "OEM_COMMA", "RETURN"])
+    press(["S", "E", "G", "U", "E", "SPACE", "I", "N", "F", "O", "R", "M", "A", "OEM_1", "OEM_8", "O", "E", "S", "SPACE", "S", "I", "G", "I", "L", "O", "S", "A", "S"])
+
 def writeTest():
     exec_()
     wait(0.2)
@@ -85,13 +108,15 @@ def annimation():
  o
 /|\\
  ║
- ''')
+
+''')
 
     def frame2(): 
         ezType('''Polichinelo!
 \\o/
  |
 / \\
+
 ''')
         
     init()
@@ -105,4 +130,4 @@ def annimation():
               
     
 if __name__ == '__main__':
-    writeTest()
+    sendMail()
