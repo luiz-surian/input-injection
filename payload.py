@@ -1,3 +1,3 @@
-from run import annimation
+from run import animation
 
-annimation()
+animation()

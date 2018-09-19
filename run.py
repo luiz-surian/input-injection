@@ -29,8 +29,15 @@ def writeTest():
     ezType('notepad¶', True)
     wait(0.4)
     ezType('''Testing application...
-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*()_+-={}[]^?~/,.;<>:\|\'"
-☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶▬↨↑↓→←∟↔▲▼⌂üéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜøØ×ƒáíóúñÑ¿®½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ðÐÊËÈıÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµþÞÚÛÙýÝ¯±‗¾÷¸¨·■
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789
+!@#$%&*()_+-={}[]<>¨^~/\|\'",.;:?
+àáãâäåèéêëìíîïòóõôöùúûüçñýÿ
+ÀÁÃÂÄÅÈÉÊËÌÍÎÏÒÓÕÔÖÙÚÛÜÇÑÝ
+æÆøØ¤ÐðßµþÞ×ƒ¶¥®©½¼¾¹²³¿‼¡±÷
+☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕↨↑↓→←∟↔▲▼⌂«»ı¦¸·
+░▒▓│┤╣║╗╝┐└┴┬┘┌├─┼¯‗╚╔╩╦╠═╬█▄▀■▬
 
 
 ''')
@@ -91,7 +98,7 @@ Se você consegue ler isto, parabéns! Significa que você não é cego.''')
     move(x=40,  y=194) # Enviar
     #click()
 
-def annimation():
+def animation():
     def init():
         exec_()
         wait(0.2)
@@ -127,7 +134,26 @@ def annimation():
         clear()
     close()
     press(['N'])
+
+def loadbar():
+    exec_()
+    wait(0.2)
+    ezType('notepad¶', True)
+    wait(0.4)
+    ezType('Please wait a moment...¶', True)
+    bar = '__________'
+    output = f'{bar} 0%'
+    ezType(output)
+    wait(0.8)
+    for i in range(10):
+        for _ in range(len(output)):
+            press(['BACK'])
+        bar = bar.replace('_', '█', 1)
+        output = f'{bar} {(i+1)*10}%'
+        ezType(output)
+        wait(0.8)
+    ezType('¶Thanks for waiting!', True)
               
     
 if __name__ == '__main__':
-    sendMail()
+    loadbar()
