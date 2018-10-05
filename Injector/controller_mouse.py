@@ -1,13 +1,8 @@
 import ctypes
 
 
-user32 = ctypes.windll.user32
-
-get_cursor_pos = user32.GetCursorPos
-set_cursor_pos = user32.SetCursorPos
-
 # see http://msdn.microsoft.com/en-us/library/ms646260(VS.85).aspx for details
-mouse_event = user32.mouse_event
+user32 = ctypes.windll.user32
 
 
 class POINT(ctypes.Structure):
@@ -16,17 +11,17 @@ class POINT(ctypes.Structure):
 
 def get_pos():
     pt = POINT()
-    get_cursor_pos(ctypes.byref(pt))
+    user32.GetCursorPos(ctypes.byref(pt))
     return f'mouse(x={pt.x}, y={pt.y})'
 
 
 def set_pos(x, y):
-    set_cursor_pos(x, y)
+    user32.SetCursorPos(x, y)
 
 
 def click():
-    mouse_event(2, 0, 0, 0, 0)  # left down
-    mouse_event(4, 0, 0, 0, 0)  # left up
+    user32.mouse_event(2, 0, 0, 0, 0)  # left down
+    user32.mouse_event(4, 0, 0, 0, 0)  # left up
 
 
 if __name__ == "__main__":
