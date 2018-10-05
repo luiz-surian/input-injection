@@ -4,7 +4,8 @@ import time
 import re
 
 try:
-    from Injector import controller_mouse, controller_keyboard, controller_keybinds
+    from Injector import controller_mouse, \
+                         controller_keyboard, controller_keybinds
 except ImportError:
     import controller_mouse
     import controller_keyboard
@@ -72,7 +73,7 @@ def combination(keys=[]):
 
 
 def ez_type(string, quick=False):
-    global  _quick_enabled
+    global _quick_enabled
     _quick_enabled = quick
 
     for letter in string:

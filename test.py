@@ -134,17 +134,17 @@ def animation():
 def loadbar():
     bar = '__________'
     output = f'{bar} 0%'
-    
+
     injector.combination(['LWIN', 'R'])
     injector.wait(0.2)
-    
+
     injector.ez_type('notepad¶', True)
     injector.wait(0.4)
-    
+
     injector.ez_type('Please wait a moment...¶', True)
     injector.ez_type(output)
     injector.wait(0.8)
-    
+
     for i in range(10):
         for _ in range(len(output)):
             injector.press(['BACK'])
